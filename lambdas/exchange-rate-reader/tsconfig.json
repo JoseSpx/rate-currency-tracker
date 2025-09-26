@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",                       /* Node 22 supports ES2022 features */
+    "module": "NodeNext",                     /* Use Node's native ESM loader */
+    "lib": ["ES2022"],                        /* Built-in modern JS APIs */
+    "moduleResolution": "NodeNext",           /* Match Node.js resolution for ESM */
+    "types": ["node"],                        /* Load Node.js type definitions */
+
+    /* Emit */
+    "outDir": "dist",                         /* Where compiled .js files go */
+    "rootDir": "src",                         /* Keep src/ as the source directory */
+    "esModuleInterop": true,                  /* Allow default imports for CommonJS */
+    "resolveJsonModule": true,                /* Allow import of .json files */
+    "sourceMap": true,                        /* Helpful for debugging */
+    "declaration": true,                      /* Generate .d.ts type declaration files */
+
+    /* Type Checking */
+    "strict": true,                           /* Enable strict type checks */
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Interop */
+    "allowSyntheticDefaultImports": true      /* Helps when mixing ESM/CJS modules */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

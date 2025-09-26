@@ -1,0 +1,26 @@
+{
+  "name": "exchange-rate-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npm run build && node dist/index.js && tsx testHandler.ts"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@aws-sdk/credential-providers": "^3.896.0",
+    "@aws-sdk/lib-dynamodb": "^3.896.0",
+    "dotenv": "^17.2.2",
+    "scrape-it": "^5.3.2"
+  }
+}
