@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"configuration","Source":"../modules/services","Dir":"../modules/services"},{"Key":"configuration.dynamodb","Source":"../dynamodb","Dir":"../modules/dynamodb"}]}
