@@ -6,20 +6,27 @@ dotenv.config();
 
 
 const getExchangeRate = async (): Promise<ExchangeRateData> => {
-  const data = await scrapeIt('https://es.investing.com/currencies/usd-pen', {
-    exchangeRate: {
-      selector: "div[data-test='instrument-price-last']",
-      eq: 0
-    },
-    buyPrice: {
-      selector: "dd[data-test='bid'] span:nth-child(2)",
-      eq: 0
-    },
-    sellPrice: {
-      selector: "dd[data-test='ask'] span:nth-child(2)",
-      eq: 0
-    },
-  });
+  console.log("Fetching exchange rate data...");
+  let data: any = {};
+  try {
+    data = await scrapeIt('https://es.investing.com/currencies/usd-pen', {
+      exchangeRate: {
+        selector: "div[data-test='instrument-price-last']",
+        eq: 0
+      },
+      buyPrice: {
+        selector: "dd[data-test='bid'] span:nth-child(2)",
+        eq: 0
+      },
+      sellPrice: {
+        selector: "dd[data-test='ask'] span:nth-child(2)",
+        eq: 0
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching exchange rate data:", error);
+    throw error;
+  }
 
   const { exchangeRate, buyPrice, sellPrice } = data.data as ExchangeRateData;
 

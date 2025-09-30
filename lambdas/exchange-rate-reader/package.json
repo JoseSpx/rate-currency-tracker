@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "npm run build && node dist/index.js && tsx testHandler.ts"
+    "dev": "npm run build && tsx testHandler.ts",
+    "package": "npm run build && npm run zip",
+    "zip": "zip -r exchange-rate-reader.zip dist/ node_modules/ package.json"
   },
   "type": "module",
   "keywords": [],

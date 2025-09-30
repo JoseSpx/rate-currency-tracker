@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"configuration","Source":"../modules/services","Dir":"../modules/services"},{"Key":"configuration.dynamodb","Source":"../dynamodb","Dir":"../modules/dynamodb"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"configuration","Source":"../modules/services","Dir":"../modules/services"},{"Key":"configuration.dynamodb","Source":"../dynamodb","Dir":"../modules/dynamodb"},{"Key":"configuration.lambda","Source":"../lambda","Dir":"../modules/lambda"},{"Key":"configuration.s3","Source":"../s3","Dir":"../modules/s3"}]}
