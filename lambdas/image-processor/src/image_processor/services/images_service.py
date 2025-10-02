@@ -83,14 +83,8 @@ class ImageService:
             ContentType='image/jpeg'
         )
         
-        # Generate S3 URL
-        s3_url = f"https://{self.bucket_name}.s3.amazonaws.com/{image_name}"
-        
-        print(f"Image uploaded successfully to S3 bucket {self.bucket_name} with key {image_name}")
-        
         return {
             'success': True,
-            'url': s3_url,
             'bucket': self.bucket_name,
             'key': image_name
         }

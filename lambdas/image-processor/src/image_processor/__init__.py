@@ -1,5 +1,9 @@
 import json
+import os
+from dotenv import load_dotenv
 from .services.images_service import ImageService
+
+load_dotenv()  # Load environment variables from .env file
 
 def lambda_handler(event, context):
   # Example: Log the received event
@@ -13,7 +17,7 @@ def lambda_handler(event, context):
 
   # Create ImageService instance and generate image
   image_service = ImageService('dev') # Use appropriate environment prefix
-  img_base64 = image_service.create_image(exchange_rate, buy_price, sell_price, save_locally=True)
+  img_base64 = image_service.create_image(exchange_rate, buy_price, sell_price, os.getenv("SAVE_IMG_LOCALLY", "False") == "True")
   result = image_service.upload_to_s3(img_base64)
 
   if not result['success']:
