@@ -5,7 +5,7 @@ from .services.images_service import ImageService
 
 load_dotenv()  # Load environment variables from .env file
 
-def lambda_handler(event, context):
+def handler(event, context):
   # Example: Log the received event
   print("Received event:", json.dumps(event))
 

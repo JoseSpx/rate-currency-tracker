@@ -1,5 +1,6 @@
 .DS_Store
 *.zip
+output_image.jpg
 
 # ===== Node.js =====
 node_modules/

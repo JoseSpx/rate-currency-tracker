@@ -1,7 +1,6 @@
 boto3==1.40.41 ; python_version >= "3.13"
 botocore==1.40.41 ; python_version >= "3.13"
 jmespath==1.0.1 ; python_version >= "3.13"
-pillow==11.3.0 ; python_version >= "3.13"
 python-dateutil==2.9.0.post0 ; python_version >= "3.13"
 python-dotenv==1.1.1 ; python_version >= "3.13"
 s3transfer==0.14.0 ; python_version >= "3.13"

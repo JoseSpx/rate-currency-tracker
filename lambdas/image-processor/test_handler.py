@@ -4,7 +4,7 @@ import os
 # Add src to Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from src.image_processor import lambda_handler
+from src.image_processor import handler
 
 # Test the lambda
 if __name__ == "__main__":
@@ -21,5 +21,5 @@ if __name__ == "__main__":
             self.invoked_function_arn = "test-arn"
             self.aws_request_id = "test-request-id"
     
-    result = lambda_handler(test_event, MockContext())
+    result = handler(test_event, MockContext())
     print("Result:", result)

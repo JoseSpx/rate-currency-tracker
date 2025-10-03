@@ -21,7 +21,7 @@
 4. **Copy source files**  
   Add your Lambda function code to the build directory:
   ```bash
-  cp -r image_processor/* build/
+  rsync -av --exclude='.env' src/ build/
   ```
 
 5. **Package the Lambda**  
@@ -32,3 +32,6 @@
   cd ..
   ```
 
+Note: Add Pillow library when testing locally and remove it when building.
+poetry add pillow
+poetry remove pillow

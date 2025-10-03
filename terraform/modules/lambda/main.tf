@@ -98,11 +98,38 @@ resource "aws_iam_role_policy_attachment" "image_processor_lambda_role" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+# S3 PutObject permission for image processor Lambda
+resource "aws_iam_policy" "image_processor_lambda_s3_policy" {
+  name   = "image_processor_lambda_s3_policy"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "s3:PutObject"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "image_processor_lambda_s3_policy_attachment" {
+  role       = aws_iam_role.image_processor_lambda_role.name
+  policy_arn = aws_iam_policy.image_processor_lambda_s3_policy.arn
+}
+
 resource "aws_lambda_function" "image_processor_lambda" {
   function_name = "image-processor-${var.prefix}"
   handler       = "image_processor.handler" # points to compiled Python
-  runtime       = "python3.13"
+  runtime       = "python3.12"
   timeout       = 10
+  architectures = [ "x86_64" ]
+  layers = [ 
+    "arn:aws:lambda:us-east-2:770693421928:layer:Klayers-p312-pillow:2"  # Pillow layer
+   ]
 
   filename         = "../../lambdas/image-processor/image-processor.zip"
   source_code_hash = filebase64sha256("../../lambdas/image-processor/image-processor.zip")
@@ -115,6 +142,7 @@ resource "aws_lambda_function" "image_processor_lambda" {
       APP_ENV = var.environment
       APP_AWS_REGION = var.region
       ENV_PREFIX = var.prefix
+      SAVE_IMG_LOCALLY = "false"
     }
   }
 }

@@ -58,7 +58,7 @@ version = "11.3.0"
 description = "Python Imaging Library (Fork)"
 optional = false
 python-versions = ">=3.9"
-groups = ["main"]
+groups = ["dev"]
 files = [
     {file = "pillow-11.3.0-cp310-cp310-macosx_10_10_x86_64.whl", hash = "sha256:1b9c17fd4ace828b3003dfd1e30bff24863e0eb59b535e8f80194d9cc7ecf860"},
     {file = "pillow-11.3.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:65dc69160114cdd0ca0f35cb434633c75e8e7fad4cf855177a05bf38678f73ad"},
@@ -258,4 +258,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "0128c4de635f15da7b3953781bcdb25a6454266f8dff90262487f33d6a6dd372"
+content-hash = "37ef974ef45d63c9d8680ca1b3759cebea2beb4724976013eac994ef33828d78"

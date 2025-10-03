@@ -28,6 +28,8 @@ class ImageService:
     return ImageFont.load_default()
 
   def create_image(self, exchange_rate, buy_price, sell_price, save_locally=False) -> bytes:
+    print("Creating image with:", exchange_rate, buy_price, sell_price)
+    print("Save locally:", save_locally)
     img_width, img_height = 800, 400
     image = Image.new("RGB", (img_width, img_height), color=(33, 33, 33))
 
